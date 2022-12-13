@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: AndyDonits/automation-sample-project
-          # path: e2e-tests
+          path: automation-sample-project
 
       - id: run-tests
         name: Run tests
