@@ -20,12 +20,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: AndyDonits/automation-sample-project
-          path: automation-sample-project
+          path: automation-sample
           token: ${{ github.token }}
 
       - id: run-tests
         name: Run tests
-        uses: ./automation-sample-project/deploy/github-action
+        uses: ./automation-sample/deploy/github-action
         with:
-          clone-dir: "automation-sample-project"
+          clone-dir: "automation-sample"
           environment: ${{ matrix.environment }}
