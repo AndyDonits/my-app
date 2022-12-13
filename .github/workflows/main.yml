@@ -30,4 +30,4 @@ jobs:
   #         clone-dir: "automation-sample"
   #         environment: ${{ matrix.environment }}
   run-tests:
-    uses: AndyDonits/automation-sample-project/.github/workflows/main.yml@main
+    uses: AndyDonits/automation-sample-project/.github/workflows/main.yml@master
