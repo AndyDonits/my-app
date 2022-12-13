@@ -8,11 +8,11 @@ on:
     branches: [master]
 
 jobs:
-  strategy:
-    matrix:
-      environment: [local]
   Test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [local]
     steps:
       - uses: actions/checkout@v1
 
