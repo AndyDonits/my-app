@@ -21,6 +21,7 @@ jobs:
         with:
           repository: AndyDonits/automation-sample-project
           path: automation-sample-project
+          token: ${{ github.token }}
 
       - id: run-tests
         name: Run tests
