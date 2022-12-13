@@ -8,26 +8,24 @@ on:
     branches: [master]
 
 jobs:
-  # run-tests:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       environment: [local]
-  #   steps:
-  #     - uses: actions/checkout@v1
-
-  #     - name: Checkout Tests
-  #       uses: actions/checkout@v2
-  #       with:
-  #         repository: AndyDonits/automation-sample-project
-  #         path: automation-sample
-  #         token: ${{ github.token }}
-
-  #     - id: run-tests
-  #       name: Run tests
-  #       uses: ./automation-sample/.github
-  #       with:
-  #         clone-dir: "automation-sample"
-  #         environment: ${{ matrix.environment }}
   run-tests:
-    uses: AndyDonits/automation-sample-project/.github/workflows/main.yml@master
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [local]
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Checkout Tests
+        uses: actions/checkout@v2
+        with:
+          repository: AndyDonits/automation-sample-project
+          path: automation-sample
+          token: ${{ github.token }}
+
+      - id: run-tests
+        name: Run tests
+        uses: ./automation-sample/.github
+        with:
+          clone-dir: "automation-sample"
+          environment: ${{ matrix.environment }}
