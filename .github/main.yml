@@ -25,7 +25,7 @@ jobs:
 
       - id: run-tests
         name: Run tests
-        uses: ./automation-sample/deploy/github-action
+        uses: ./automation-sample/.github/deploy/action.yml
         with:
           clone-dir: "automation-sample"
           environment: ${{ matrix.environment }}
