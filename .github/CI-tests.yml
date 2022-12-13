@@ -1,0 +1,29 @@
+name: Integration Test Example
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
+
+jobs:
+  strategy:
+    matrix:
+      environment: [local]
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Checkout Tests
+        uses: actions/checkout@v2
+        with:
+          repository: AndyDonits/automation-sample-project
+          # path: e2e-tests
+
+      - id: run-tests
+        name: Run tests
+        uses: ./automation-sample-project/deploy/github-action
+        with:
+          environment: ${{ matrix.environment }}
